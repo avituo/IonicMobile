@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="white">
+    <ion-title>Contatos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button (click)="loadContacts()" expand="full">Carregar Contatos</ion-button>
+  <ion-button (click)="createContacts()" expand="full">Criar Contatos</ion-button>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let c of myContacts">
+      <ion-item>
+        <ion-label>{{ c.name.givenName }} <b>{{ c.name.familyName }}</b>
+          <p>
+            {{ c.phoneNumbers[0].value }}
+          </p>
+        </ion-label>
+      </ion-item>
+
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
