@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Platform } from '@ionic/angular';
+import { App } from '@capacitor/app'
 
 @Component({
   selector: 'app-home',
@@ -8,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private platform: Platform) { }
 
   ngOnInit() {
   }
@@ -20,4 +22,9 @@ export class HomePage implements OnInit {
   contactsEnter() {
     this.router.navigate(['contacts']);
   }
+
+  exitApp() {
+    App.exitApp;
+  }
+
 }
